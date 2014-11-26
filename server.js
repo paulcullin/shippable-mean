@@ -1,10 +1,4 @@
 'use strict';
-
-/**
- * Add New Relic performance monitoring.
- */
-require('newrelic');
-
 /**
  * Module dependencies.
  */
