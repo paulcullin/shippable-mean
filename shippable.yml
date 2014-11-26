@@ -1,9 +1,33 @@
 language: node_js
+
 node_js:
   - 0.10
+
 env:
-  - NODE_ENV=travis
+  - NODE_ENV=production
+
+branches:
+  only:
+    - master
+
+before_install:
+  - npm install -g bower
+  - npm install -g grunt-cli
+
+install:
+  - bower install
+  - npm install
+
+before_script:
+  - mkdir -p shippable/test-results
+  - mkdir -p shippable/code-coverage
+
+script:
+  - grunt build
+  - grunt test
+
 services:
   - mongodb
+
 after_success:
   - git push -f git@heroku.com:labyrinth-mean.git master
