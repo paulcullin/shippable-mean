@@ -4,19 +4,19 @@ node_js:
   - 0.10
 
 env:
-  - NODE_ENV=production
+  - NODE_ENV=test
 
 branches:
   only:
     - master
 
-before_install:
-  - npm install -g bower
-  - npm install -g grunt-cli
+# before_install:
+#  - npm install -g bower
+#  - npm install -g grunt-cli
 
-install:
-  - bower install
-  - npm install
+# install:
+#  - bower install
+#  - npm install
 
 before_script:
   - mkdir -p shippable/test-results
