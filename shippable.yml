@@ -22,9 +22,9 @@ before_script:
   - mkdir -p shippable/test-results
   - mkdir -p shippable/code-coverage
 
-script:
-  - grunt build
-  - grunt test
+# script:
+#  - grunt build
+#  - grunt test
 
 services:
   - mongodb
