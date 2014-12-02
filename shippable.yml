@@ -11,7 +11,7 @@ services:
 
 # The path for Xunit to output test reports
 env:
-  - NODE_ENV=production
+  - NODE_ENV=test
   - XUNIT_FILE=shippable/testresults/result.xml
 
 # Create directories for test and coverage reports
@@ -21,7 +21,6 @@ before_script:
 
 # Running the tests with grunt
 script:
-  - grunt build
   - grunt test
 
 # Tell istanbul to generate a coverage report
