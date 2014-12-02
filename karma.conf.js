@@ -17,7 +17,26 @@ module.exports = function(config) {
 		// Test results reporter to use
 		// Possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
 		//reporters: ['progress'],
-		reporters: ['progress'],
+		reporters: ['progress', 'junit', 'coverage'],
+
+		junitReporter: {
+			outputFile: 'shippable/testresults/result.xml',
+			suite: ''
+		},
+
+		coverageReporter : {
+			reporters : [
+				{
+					type   : 'cobertura',
+					dir    : 'shippable/',
+					subdir : 'codecoverage'
+				}
+			]
+		},
+
+		preprocessors : {
+			'public/modules/*/*.js' : ['coverage']
+		},
 
 		// Web server port
 		port: 9876,
